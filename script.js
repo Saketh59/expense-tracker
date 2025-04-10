@@ -143,3 +143,39 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load transactions on page load
     if (transactionsDiv) loadTransactions();
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const authForm = document.getElementById('auth-form');
+    const toggleLink = document.getElementById('toggle-link');
+    const formTitle = document.getElementById('form-title');
+    const usernameField = document.getElementById('username');
+    const message = document.getElementById('message');
+    
+    let isLogin = true;
+
+    // Toggle between login and signup forms
+    toggleLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        isLogin = !isLogin;
+        
+        if (isLogin) {
+            formTitle.textContent = 'Login';
+            toggleLink.textContent = 'Sign up';
+            usernameField.style.display = 'none';
+            authForm.querySelector('button').textContent = 'Login';
+        } else {
+            formTitle.textContent = 'Sign Up';
+            toggleLink.textContent = 'Login';
+            usernameField.style.display = 'block';
+            authForm.querySelector('button').textContent = 'Sign Up';
+        }
+    });
+
+    // Handle form submission
+    authForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // In a real app, you would validate credentials here
+        // For this example, we'll just redirect to dashboard
+        window.location.href = 'dashboard.html';
+    });
+});
