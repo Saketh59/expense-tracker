@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="dashboard-container">
+        <h2>Welcome, <span id="username"></span>!</h2>
+        <button onclick="logout()">Logout</button>
+        
+        <h3>Manual Expense Entry</h3>
+        <form id="manual-entry-form">
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="text" id="subcategory" placeholder="Subcategory" required>
+            <input type="text" id="note" placeholder="Note">
+            <input type="number" id="amount" placeholder="Amount" required>
+            <select id="income_expense">
+                <option value="Expense">Expense</option>
+                <option value="Income">Income</option>
+            </select>
+            <button type="submit">Add Expense</button>
+        </form>
+        
+        <h3>Upload CSV</h3>
+        <input type="file" id="csv-file" accept=".csv">
+        <button onclick="uploadCSV()">Upload CSV</button>
+        
+        <h3>Upload Receipt (OCR)</h3>
+        <input type="file" id="receipt-file" accept="image/*">
+        <button onclick="uploadReceipt()">Upload Receipt</button>
+        
+        <h3>Budget Advisory</h3>
+        <button onclick="getBudgetAdvice()">Get Advice</button>
+        <p id="advice-output"></p>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
