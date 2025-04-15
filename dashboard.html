@@ -7,20 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button  id="logout-btn",onclick="logout()">Logout</button>
     <div id="dashboard-container">
         <h2>Welcome, <span id="username"></span>!</h2>
-        <button onclick="logout()">Logout</button>
         
         <h3>Manual Expense Entry</h3>
         <form id="manual-entry-form">
             <input type="text" id="category" placeholder="Category" required>
             <input type="text" id="subcategory" placeholder="Subcategory" required>
-            <input type="text" id="note" placeholder="Note">
             <input type="number" id="amount" placeholder="Amount" required>
-            <select id="income_expense">
-                <option value="Expense">Expense</option>
-                <option value="Income">Income</option>
-            </select>
             <button type="submit">Add Expense</button>
         </form>
         
